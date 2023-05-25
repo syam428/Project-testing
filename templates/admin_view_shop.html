@@ -1,0 +1,110 @@
+{%include "special_header.html"%}
+
+<!-- ======= Hero Section ======= -->
+<!--   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1 style="color:black">Our Partners</h1>
+      <p style="color:black">Scroll down <span class="typed" data-typed-items="Partners, Clients, Products, Categories"></span></p>
+    </div>
+  </section> --><!-- End Hero -->
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about" style="background-image: linear-gradient(to  right, #fff, #a5e6f5);">
+      <div class="container">
+      	<div>
+      		
+      	</div>
+        <div class="section-title" data-aos="fade-in"  >
+          <h2>REGISTERED SHOPS</h2>
+        </div>
+
+<!-- <h1><br><center>REGISTERED SHOPS</h1></center> -->
+<!-- <p><center> Details of all shops</center></p> -->
+<!-- <center ><table border="1" class="table table-hover">
+	<tr align="center">
+		<th>#</th>
+		<th>Shop_Name</th>
+		<th>District</th>
+		<th>Place</th>
+		<th>Landmark</th>
+		<th>Phone</th>
+		<th>Email</th>
+		<th>License</th>
+		<th>Status</th>
+		<th colspan="2" >Action</th>
+	</tr>
+	{% for i in data['res'] %}
+	{%if i['shop_id']!=0%}
+	<tr align="center" valign="middle">
+		<td>{{ loop.index }}</td>
+		<td>{{i['shop_name']}}</td>
+		<td>{{i['District']}}</td>
+		<td>{{i['place']}}</td>
+		<td>{{i['landmark']}}</td>
+		<td>{{i['phone']}}</td>
+		<td>{{i['email']}}</td>
+		<td><a href={{i['license']}}><img src="/{{i['license']}}" alt="Not found" width="100px" height="100px"></td>
+		<td>{{i['status']}}</td>
+		<td><a href="?action=accept&lid={{i['login_id']}}"><font color="green" class="bi bi-check-circle-fill"><b></b></font></a></td>
+		<td><a href="?action=reject&lid={{i['login_id']}}"><font color="Red"><b><span class="bi bi-trash3"></b></font></a></td>
+		
+
+	</tr>
+	{%endif%}
+	
+	{% endfor %}
+
+</table></center>
+
+ 
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-down-short"></i></a> -->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); height:400px width: 1000px; grid-gap: 20px;">
+    {% for i in data['res'] %}
+        {% if i['shop_id'] != 0 %}
+            <div class="card">
+                <div class="card-body">
+                    <center class="m-t-30">
+                    <h6>View License</h6> 
+                        <a href={{i['license']}}>
+                            <img src="/{{i['license']}}" alt="Not found" width="100px" height="100px">
+                            <hr>
+                            <h4 class="card-title m-t-10">{{i['shop_name']}}</h4>
+                            <h6 class="card-subtitle">{{i['landmark']}},{{i['place']}},{{i['District']}}</h6>
+                        </a>
+                        <hr>
+                        <h6>Status: {{i['status']}}</h6>
+                    </center>
+                </div>
+                <div>
+                    <hr> 
+                </div>
+                <div class="card-body"> 
+                    <small class="text-muted">Email address </small>
+                    <h6><b>{{i['email']}}</b></h6> 
+                    <small class="text-muted p-t-30 db">Phone</small>
+                    <h6><b>{{i['phone']}}</b></h6> 
+                    <small class="text-muted p-t-30 db"></small>
+                    <h3>
+                        <a href="?action=accept&lid={{i['login_id']}}">
+                            <font color="green" class="btn btn-outline-success bi bi-check-circle-fill" >
+                                <b>&nbsp Approve</b>
+                            </font>
+                        </a> 
+                        <a href="?action=reject&lid={{i['login_id']}}">
+                            <font color="Red">
+                                <span class="btn btn-outline-danger bi bi-trash3">
+                                    <b>Deny</b>
+                                </span>
+                            </font>
+                        </a>
+                    </h3>
+                </div>
+            </div> 
+        {% endif %}
+    {% endfor %}
+</div>
+
+{%include "special_footer.html"%}

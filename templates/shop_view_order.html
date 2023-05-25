@@ -1,0 +1,33 @@
+{%include"shop_header.html"%}
+
+<h1><center><br>Our Recent Orders</h1></center>
+	<form method="post">
+		<center>
+		<h3>Order Details</h3>
+		<hr>
+		<table class="table table-striped">
+			<tr><th>#</th>
+				<th>Product Name</th>
+				<th>Quantity</th>
+				<th>Date of order</th>
+				<th>Payment Details</th>
+				<th>Current Status</th>
+				<th colspan="2">Approve for delivery</th>
+			</tr>
+			{% for i in data['shpord'] %}	
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['product_name']}}</td>
+				<td>{{i['quantity']}}</td>
+				<td>{{i['date_time']}}</td>
+				<td><a href="payment_slip?ordmid={{i['order_master_id']}}&orddet={{i['order_details_id']}}" style="color:" class="btn btn-outline-success"><span class="bi bi-credit-card-2-front"><b>&nbsp&nbsp Check</b></a></td>
+				<td>{{i['status']}}</td>
+				<td><a href="?action=deliver&ordmid={{i['order_master_id']}}" class="btn btn-outline-success"style="color:";><b><span class="bi bi-check-circle-fill">&nbsp&nbspApprove<span></b></a></td>
+			</tr>
+			{%endfor%}
+		</table>
+
+		</center>
+	</form>
+
+{%include"public_footer.html"%}

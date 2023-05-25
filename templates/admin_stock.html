@@ -1,0 +1,34 @@
+{%include "special_header.html"%}
+<main id="main">
+	<section id="about" class="about" >
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" >
+          <h2>STOCK HOUSE</h2>
+          <p>Stock details</p>
+         </div>
+     </div>
+<!-- <h1><br><center>Stock-House</h1></center>
+<p><center> Stock Details</center></p> -->
+<center><table cellpadding="30px" class="table table-hover table-bordered">
+	<tr align="center">
+		<th>#</th>
+		<th>Product Name</th>
+		<th>Availability</th>
+		<th>Distributor</th>
+		<th>Contact details</th>
+		<th>Last Updated</th>
+	</tr>
+	{% for i in data['res'] %}
+	<tr align="center">
+		<td>{{ loop.index }}</td>
+		<td>{{i['product_name']}}</td>
+		<td>{{i['quantity']}}</td>
+		<td>{{i['shop_name']}}</td>
+		<td>{{i['phone']}}</td>
+		<td>{{i['date_time']}}</td>
+	</tr>
+
+	{% endfor %}
+</table></center>
+
+{%include "special_footer.html"%}

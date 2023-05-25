@@ -1,0 +1,32 @@
+{%include"user_header.html"%}
+	<form method="post">
+		<center><br>
+		<h1>Product Customer Feedback Form</h1>
+		<div class="alert alert-success" role="alert">
+  Thank you for taking time to provide feedback. We appreciate hearing from you and will review your comments carefully.
+</div>
+		<table class="table table-hover">
+			<tr align="center">
+				<th ></th>
+				<td >Poor<input class="form-check-input" type="radio" name="rating" value=poor> 
+					Average
+				 <input class="form-check-input" type="radio" name="rating" value=average> 
+					Good <input class="form-check-input" type="radio" name="rating" value=Good> Excellent 
+					<input class="form-check-input" type="radio" name="rating" value=Excellent></td>
+			
+			</tr>
+			<tr>
+				<th>Feedbacks :</th>
+				<td><textarea class="form-control" cols=50 rows="4" name="review" required></textarea></td>
+			</tr>
+			<tr>
+				
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input class="btn btn-outline-primary " type="submit" name="submit" value="Send"></td>
+			</tr>
+		</table>
+		</center>
+		
+	</form>
+{%include"public_footer.html"%}

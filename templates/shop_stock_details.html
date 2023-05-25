@@ -1,0 +1,45 @@
+{%include "shop_header.html"%}
+<form method="post">
+{%if data['stock']%}
+<center>
+		<h1>Stock Details</h1>
+		<hr>
+		<table style="width: 500px" class="table table-striped">
+			<tr>
+			<!-- <th>Product Name:</th> -->
+			<td><input class="form-control" type="text" value="{{data['stock'][0]['product_name']}}"></td>
+			</tr>
+			<tr>
+				<!-- <th>Quantity</th> -->
+				<td><input class="form-control"  type="text" name="quant" placeholder="Stock Quantity"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input class="btn btn-outline-success"type="submit" name="up_stock" value="UPDATE STOCK"></td>
+			</tr>
+		</table>
+		</center>
+</form>
+{%else%}
+<h1><center>STOCK ROOM</h1></center>
+<p><center> Stock Details</center></p>
+<center><table class="table table-striped table-bordered">
+	<tr align="center">
+		<th>#</th>
+		<th>Product Name</th>
+		<th>Quantity</th>
+		<th>Date and Time</th>
+		<th>Manage stock</th>
+	</tr>
+	{% for i in data['shpstk'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{i['product_name']}}</td>
+		<td>{{i['quantity']}}</td>
+		<td>{{i['date_time']}}</td>
+		<td align="center"><a href="?action=update&prd={{i['product_id']}}" class="btn btn-outline-primary" style="color:"><b><span class="bi bi-upload"> Update</b></a></td>
+	</tr>
+	{% endfor %}
+	{%endif%}
+</table></center>
+
+{%include "public_footer.html"%}

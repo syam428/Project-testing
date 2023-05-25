@@ -1,0 +1,489 @@
+<!--old working block-->
+<!-- "user_header.html" %} -->
+<!-- <section id="hero">
+
+    <div class="container">
+      <div class="row d-flex align-items-center">
+      <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right"> -->
+<!-- <h1><center><br>Order Summary</h1></center>
+<center><form method="post">
+	<table style="width: 593px" class="table table-dark table-borderless table-hover">
+		<tr align="center">
+			
+			<th>
+				Key :
+			</th>
+			<td colspan="3"><input type="text" name="key" placeholder="Enter key..." class="form-control"><span><input type="submit" name="dd" value="Decrypt" class="btn btn-outline-success"></span></td>
+		</tr>
+		<tr>
+			<th>Cardtype</th>
+			<th colspan="3" align="center"><select required class="dropdown-item">
+				<option>Credit card</option>
+				<option>Debit card</option>
+			</select></th>
+		</tr>
+		<tr>
+			<th align="center">Card Number</th>
+			<td colspan="3"><input required class="form-control"type="text" pattern="[0-9]+$" maxlength="16" minlength="16" value="{{data['numb']}}" readonly name="card" palce holder="Enter Card Number"></td>
+		</tr>
+		<tr><th>Valid Thru</th>
+			<td><input required class="form-control" type="text" name="edate" value="{{data['dat']}}" id="dateField" readonly></td>
+			<th>CVV</th>
+			<td><input  class="form-control" type="password" pattern="[0-9]+$" maxlength="3" minlength="3" value="{{data['cv']}}"  readonly  name="cvv"></td>
+
+		</tr>
+		<tr bgcolor="green" align="center">
+			<th>Total Amount</th>
+			<td colspan="3" align="center"><input class="form-control" readonly type="text" name="amt" value="₹{{data['total']}}"></td>
+		</tr>
+		<tr align="center">
+			<th colspan="4" align="center"><input class="btn btn-outline-danger" type="submit" name="pay" style="height: 50px;width: 200px;" value="Pay ₹{{data['total']}}"></th>
+		</tr>
+	</table>
+</form></center>
+</div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+        <img src="/static/assets/img/Payment.png" class="img-fluid" alt="">
+      </div>
+    </div>
+    </div> -->
+
+<!-- {%include "public_footer.html" %} -->
+
+
+
+
+
+<!--new block------------------->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Payment Portal</title>
+</head>
+<!-- <h1><center><br>Order Summary</h1></center>
+<center><form method="post">
+	<table style="width: 593px" class="table table-dark table-borderless table-hover"  >
+		<tr>
+			<th>Cardtype</th>
+			<th colspan="3" align="center"><select required class="dropdown-item">
+				<option>Credit card</option>
+				<option>Debit card</option>
+			</select></th>
+		</tr>
+		<tr>
+			<th align="center">Card Number</th>
+			<td colspan="3"><input required class="form-control"type="text" pattern="[0-9]+$" name="card"palce holder="Enter Card Number"></td>
+		</tr>
+		<tr><th>Valid Thru</th>
+			<td><input required class="form-control" type="date" name="edate" id="dateField"></td>
+			<th>CVV</th>
+			<td><input required class="form-control" type="password" pattern="[0-9]+$" maxlength="3"  minlength="3"  name="cvv"></td>
+
+		</tr>
+		<tr bgcolor="green" align="center">
+			<th>Total Amount</th>
+			<td colspan="3" align="center"><input class="form-control" type="text" name="amt" value="₹{{data['total']}}"readonly></td>
+		</tr>
+		<tr align="center">
+			<th colspan="4" align="center"><input class="btn btn-outline-danger" type="submit" name="pay" style="height: 50px;width: 200px;" value="Pay ₹{{data['total']}}"></th>
+		</tr>
+	</table>
+</form></center>
+</div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+        <img src="/static/assets/img/Payment.png" class="img-fluid" alt="">
+      </div>
+    </div>
+    </div>
+
+
+<script>
+  var dateField = document.getElementById("dateField");
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = yyyy + '-' + mm + '-' + dd;
+  dateField.setAttribute("min", today);
+</script> -->
+<body style="background-image: url(/static/assets/img/payment2.gif)">
+	<form method="post">
+	<section id="hero">
+
+   <section id="hero">
+
+    <div class="container">
+      <div class="row d-flex align-items-center">
+      <div  data-aos="fade-right">
+	<article class="card">
+	<div class="container">
+		<div class="card-title">
+			<h2>Payment</h2>
+		</div>
+		<div class="card-body">
+			<div class="payment-type">
+				<h4>Make payment as follows:</h4>
+				<div class="types flex justify-space-between">
+					<div class="type selected">
+						<div class="logo">
+							<i class="far fa-credit-card"></i>
+						</div>
+						<div class="text">
+							<h5>Paste the purchase token sent to your mail<h5>
+						</div>
+					</div>
+					<div class="type">
+						<div class="logo">
+							<i class="fab fa-paypal"></i>
+						</div>
+						<div class="text">
+							<h5>Click the<br> <font color="green"><b>CHECK</b></font> button</h5>
+						</div>
+					</div>
+					<div class="type">
+						<div class="logo">
+							<i class="fab fa-amazon"></i>
+						</div>
+						<div class="text title">
+							<h5>Verify your card and procced to pay<h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="payment-info flex justify-space-between">
+				<div class="column billing">
+					<div class="title">
+						<div class="num">1</div>
+						<h4>Billing Info</h4>
+					</div>
+					<hr>
+					<div class="flex justify-space-between">
+					<div class="field half">
+						<label for="name">Name</label>
+						<input id="name" type="text" placeholder="Full Name" value="{{data['deta'][0]['first_name']}}">
+					</div>
+					<div class="field half">
+					<label for="name">Surname</label>
+					<input id="name" type="text" placeholder="Full Name" value="{{data['deta'][0]['last_name']}}">
+					</div>
+				</div>
+					<div class="field full">
+						<label for="address">Address1</label>
+						<input id="address" type="text" placeholder="Billing Address" value="{{data['deta'][0]['place']}}">
+					</div>
+					<div class="field full">
+						<label for="zip">Address2</label>
+						<input id="zip" type="text" placeholder="Phone" value="{{data['deta'][0]['landmark']}}">
+					</div>
+					<div class="flex justify-space-between">
+						<div class="field half">
+							<label for="city">City</label>
+							<input id="city" type="text" placeholder="City" value="{{data['deta'][0]['District']}}">
+						</div>
+						<div class="field half">
+							<label for="state">PIN</label>
+							<input id="state" type="text" placeholder="State" value="{{data['deta'][0]['pincode']}}">
+						</div>
+					</div>
+					<div class="field full">
+						<label for="zip">Phone</label>
+						<input id="zip" type="text" placeholder="Phone" value="{{data['deta'][0]['phone']}}">
+					</div>
+				</div>
+				<form>
+				<div class="column shipping">
+					<div class="title">
+						<div class="num">2</div>
+						<h4>Credit Card Info</h4>
+					</div>
+					<hr>
+					<div class="field full">
+						<label for="key">Paste Purchase token</label>
+						<input id=key type="text" placeholder="Email configuration key"  name="key">
+					</div>
+					<center><div class="field half">
+						<label for="edcy" >check your card here</label>
+						<input id="edcy" type="submit" name="dd" value="CHECK" style="background-color: green;  border:0;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size:16px;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: 10px;
+  height: 40px;
+  width: 100px">
+					</div></center>
+					<hr>
+<!-- 					<div class="field full">
+						<label for="name">Cardholder Name</label>
+						<input id="name" type="text" placeholder="Full Name" required >
+					</div> -->
+					{%if data['dat']%}
+					<div class="field full">
+						<label for="address">Card Number</label>
+						<input id="address" id="username" required  type="text" placeholder="1234-5678-9012-3456"   value="{{data['numb']}}" name="card">
+					</div>
+						<div class="field full">
+							<label for="city">Valid Thru</label>
+							<input id="city" type="text"  value="{{data['dat']}}" name="edate" required >
+						</div>
+				
+					<div class="field full">
+						<label for="zip">CVV Number</label>
+						<input id="zip" type="password"  value="{{data['cv']}}" name="cvv" required >
+						<hr>
+					</div>
+					{%endif%}
+				</div>
+			</div>
+		</div>
+		<div class="card-actions flex justify-space-between">
+			<div class="flex-start">
+				<a href="/usehome">Back to store</a>
+			</div>
+			{%if data['dat']%}
+			<div class="flex-end">
+				<input type="submit" style="background-color: #0693cd;  border:0;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+  font-size:16px;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: 10px;
+  width: 180px" name="pay"  value="Pay ₹{{data['total']}}"/></form>
+			</div>
+			{%endif%}
+		</div>
+	</div>
+</article>
+<footer>
+	<h4 style="color:red"><marquee>NOTE:Do not refresh or close the tab!!</h4></marquee>
+</footer>
+<style type="text/css">
+	body {
+  background: #29545c;
+  color: #28333b;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1em;
+  padding: 0px 25px;
+}
+body a {
+  color: #28333b;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(64,179,255,0.5);
+  opacity: 0.75;
+  transition: all 0.5s ease;
+}
+body a:hover {
+  border-bottom: 2px solid #40b3ff;
+  opacity: 1;
+}
+.field {
+  margin-bottom: 25px;
+}
+.field.full {
+  width: 100%;
+}
+.field.half {
+  width: calc(50% - 12px);
+}
+.field label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.field input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #e8ebed;
+  display: block;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.field input:placeholder {
+  color: #e8ebed !important;
+}
+.flex {
+  display: flex;
+  flex-direction: row wrap;
+  align-items: center;
+}
+.flex.justify-space-between {
+  justify-content: space-between;
+}
+.card {
+  padding: 50px;
+  margin: 50px auto;
+  max-width: 850px;
+  background: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 0px 24px 60px -1px rgba(37,44,54,0.14);
+}
+.card .container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.card .card-title {
+  margin-bottom: 50px;
+}
+.card .card-title h2 {
+  margin: 0;
+}
+.card .card-body .payment-type,
+.card .card-body .payment-info {
+  margin-bottom: 25px;
+}
+.card .card-body .payment-type h4 {
+  margin: 0;
+}
+.card .card-body .payment-type .types {
+  margin: 25px 0;
+}
+.card .card-body .payment-type .types .type {
+  width: 30%;
+  position: relative;
+  background: #f2f4f7;
+  border: 2px solid #e8ebed;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+.card .card-body .payment-type .types .type:hover {
+  border-color: #28333b;
+}
+.card .card-body .payment-type .types .type:hover .logo,
+.card .card-body .payment-type .types .type:hover p {
+  color: #28333b;
+}
+.card .card-body .payment-type .types .type.selected {
+  border-color: #40b3ff;
+  background: rgba(64,179,255,0.1);
+}
+.card .card-body .payment-type .types .type.selected .logo {
+  color: #40b3ff;
+}
+.card .card-body .payment-type .types .type.selected p {
+  color: #28333b;
+}
+.card .card-body .payment-type .types .type.selected::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: -21px;
+  right: -21px;
+  background: #fff;
+  border: 2px solid #40b3ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .card-body .payment-type .types .type .logo,
+.card .card-body .payment-type .types .type p {
+  transition: all 0.5s ease;
+}
+.card .card-body .payment-type .types .type .logo {
+  font-size: 48px;
+  color: #8a959c;
+}
+.card .card-body .payment-type .types .type p {
+  margin-bottom: 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #8a959c;
+}
+.card .card-body .payment-info .column {
+  width: calc(50% - 25px);
+}
+.card .card-body .payment-info .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card .card-body .payment-info .title .num {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 2px solid #40b3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 12px;
+  font-size: 12px;
+}
+footer {
+  margin: 50px auto;
+  max-width: 850px;
+  text-align: center;
+}
+.button {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 15px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background: transparent;
+  border: 2px solid transparent;
+}
+.button.button-link {
+  padding: 0 0 2px;
+  margin: 0 25px;
+  border-bottom: 2px solid rgba(64,179,255,0.5);
+  border-radius: 0;
+  opacity: 0.75;
+}
+.button.button-link:hover {
+  border-bottom: 2px solid #40b3ff;
+  opacity: 1;
+}
+.button.button-primary {
+  background: #40b3ff;
+  color: #fff;
+}
+.button.button-primary:hover {
+  background: #218fd9;
+}
+.button.button-secondary {
+  background: transparent;
+  border-color: #e8ebed;
+  color: #8a959c;
+}
+.button.button-secondary:hover {
+  border-color: #28333b;
+  color: #28333b;
+}
+
+</style>
+<script>
+$(document).ready(function() {
+    $('#tbName').on('input change', function() {
+        if($(this).val() != '') {
+            $('#submit').prop('disabled', false);
+        } else {
+            $('#submit').prop('disabled', true);
+        }
+    });
+});
+</script>
+</body>
+</html>

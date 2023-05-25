@@ -1,0 +1,55 @@
+{%include "special_header.html"%}
+
+<!-- ======= Hero Section ======= -->
+  <!-- <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1 style="color:black">Our Customers!</h1>
+      <p style="color:black">Scroll down <span class="typed" data-typed-items="Partners, Clients, Products, Categories"></span></p>
+    </div>
+  </section> --><!-- End Hero -->
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about" style="background-image:purple">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-in">
+          <h2>Customer details!</h2>
+        </div>
+
+       
+
+<!-- <h1><br><center>Customer Details</h1></center>
+<p><center>View all Customers here!!</center></p> -->
+
+<center><table style="width:800px" class="table table-hover table-bordered">
+	<tr align="center">
+		<th>#</th>
+		<th>Name</th>
+		<th>House Name</th>
+		<th>District</th>
+		<th>Place</th>
+		<th>Landmark</th>
+		<th>Pincode</th>
+		<th>Phone</th>
+		<th>@Email</th>
+	</tr>
+	{% for i in data['res'] %}
+	<tr align="center">
+		<td>{{ loop.index }}</td>
+		<td>{{i['first_name']}} {{i['last_name']}}</td>
+		<td>{{i['house_name']}}</td>
+		<td>{{i['District']}}</td>
+		<td>{{i['place']}}</td>
+		<td>{{i['landmark']}}</td>
+		<td>{{i['pincode']}}</td>
+		<td>{{i['phone']}}</td>
+		<td>{{i['email']}}</td>
+		
+
+	</tr>
+
+	{% endfor %}
+</table></center>
+
+
+{%include "special_footer.html"%}

@@ -1,0 +1,52 @@
+{%include "shop_header.html"%}
+{%if data['reply']==0%}
+<form method="post">
+	<center><br><table class="table table-striped">
+		<tr>
+			<th>Reply:</th>
+			<td><textarea required cols="50" rows="10" class="form-control" placeholder="Type the massage here" name="replay"></textarea></td>
+		</tr>
+		<!-- <tr>
+			<td><input required placeholder="Reply"  class="form-control"type="text" name="replay"></td>
+		</tr> -->
+		<tr align="center">
+			<th colspan="2" align="center"><input  style="height: 50px;width: 200px;" type="submit" class="btn btn-outline-success" name="shop_replay" value="Send"></th>
+		</tr>
+	</table></center>
+</form>
+{%else%}
+<h1><br><center>Complaint Zone</h1></center>
+<p><center>Read and Review complaints</center></p>
+
+
+<center><table class="table table-striped table-bordered">
+	<tr align="center">
+		<th>#</th>
+		<th>Name</th>
+		<th>Complaint type</th>
+		<th>Complaint</th>
+		<th>Replay</th>
+		<th>Date/Time</th>
+		<th>Pending</th>
+		
+		
+		
+	</tr>
+	{% for i in data['complaints'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{i['first_name']}}</td>
+		<td>{{i['type']}}</td>
+		<td>{{i['complaint']}}</td>
+		<td>{{i['reply']}}</td>
+		<td>{{i['date_time']}}</td>
+		{% if i['reply']=="pending" %}
+		<td align="center"><a href="?action=reply&cid={{i['complaint_id']}}" class="btn btn-outline-primary"><font color><b><span class="bi bi-reply-all-fill">  Reply</span></b></font></a></td>
+		{%endif%}
+
+	</tr>
+
+	{% endfor %}
+</table></center>
+{%endif%}
+{%include "public_footer.html"%}

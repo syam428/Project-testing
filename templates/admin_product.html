@@ -1,0 +1,36 @@
+{%include "special_header.html"%}
+
+<main id="main">
+	<!-- ======= About Section ======= -->
+    <section id="about" class="about" style="background-image:purple">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in">
+          <h2>Current Products!</h2>
+          <p>Our recent products details</p>
+        </div>
+<!-- <h1><br><center>Current Products!</h1></center>
+<p><center> Prdouct details</center></p> -->
+<center><table class="table table-bordered" cellpadding="15px">
+	<tr align="center" >
+		<th >#</th>
+		<th>Distributor</th>
+		<th>Product Name</th>
+		<th>Details</th>
+		<th>Prices</th>
+		<th>Image</th>
+	</tr>
+	{% for i in data['res'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{i['shop_name']}}</td>
+		<td>{{i['product_name']}}</td>
+		<td>{{i['details']}}</td>
+		<td>{{i['price']}}</td>
+		<td><img src="/{{i['image']}}" alt="Not found" width="100px" height="100px"></td>
+
+	</tr>
+
+	{% endfor %}
+</table></center>
+
+{%include "special_footer.html"%}

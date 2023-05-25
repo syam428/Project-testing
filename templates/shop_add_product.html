@@ -1,0 +1,112 @@
+{%include "shop_header.html"%}
+	<form method="post" enctype="multipart/form-data">
+		<center><br>
+		{%if data['upd']%}
+		<h1>Edit your Prodcuts!</h1>
+		<table class="table  table-hover" style="width:900px";>
+			<tr>
+				<th>CATEGORY</th>
+				<td align="center">
+					<select class="dropdown-item"name="category">
+						<option value="{{data['upd'][0]['category_id']}}">{{data['upd'][0]['category_name']}}</option>
+						{% for i in data['cat'] %}
+						{%if i['category_id']==data['upd'][0]['category_id']%}
+						{%else%}
+					<option value="{{i['category_id']}}">{{i['category_name']}}</option>
+					{% endif %}
+					{% endfor %}
+					</select>
+				</td>
+
+			</tr>
+			<tr><th>PRODUCT NAME:</th>
+				<td align="center"><input class="form-control" required type="text" name="proname" placeholder="Product Name" value="{{data['upd'][0]['product_name']}}"></td>
+			</tr>
+			<tr>
+				<th align="center">DETAILS:</th>
+				<td align="center"><textarea class="form-control" required rows="5" cols="20" name="prodet">{{data['upd'][0]['details']}}</textarea></td>
+			</tr>
+			<tr>
+			</tr>
+				<tr>
+				<th align="center">PRICE:</th>
+				<td align="center"><input type="number" required name="proprice"class="form-control" placeholder="Product Price" value="{{data['upd'][0]['price']}}"></td>
+			</tr>
+			<tr>
+				<th align="center">IMAGE:</th>
+				<td align="center"> <input class="form-control" type="file" name="profile">
+			</tr>
+			<tr align="center">
+				<th colspan="2 align="center"><input type="submit" class="btn btn-outline-danger" name="up_submit" value="Update Item"></th>
+			</tr>
+		</table>
+
+		{%else%}
+		<h1><br>Add your product here!!</h1>
+		<hr>
+		<table style="width:1200px"; class="table table-striped">
+			<tr>
+				<th>CATEGORY</th>
+				<td align="center">
+					<select class="dropdown-item" name="category">
+						{% for i in data['cat'] %}
+					<option value="{{i['category_id']}}">{{i['category_name']}}</option>
+					{% endfor %}
+					</select>
+				</td>
+
+			</tr>
+			<tr><th>PRODUCT NAME:</th>
+				<td align="center"><input class="form-control" required type="text" name="proname" placeholder="Product Name"></td>
+			</tr>
+			<tr>
+				<th align="center">DETAILS:</th>
+				<td align="center"><textarea class="form-control" required rows="5" cols="20" name="prodet"></textarea></td>
+			</tr>
+			<tr>
+			</tr>
+				<tr>
+				<th align="center">PRICE:</th>
+				<td align="center"><input class="form-control" type="number" required name="proprice" placeholder="Product Price"></td>
+			</tr>
+		
+			<tr>
+				<th align="center">IMAGE:</th>
+				<td align="center"> <input class="form-control" type="file" name="profile">
+			</tr>
+			<tr align="center">
+				<th colspan="2 align="center"><input type="submit" class="btn btn-outline-primary" name="submit" value="Upload Item"></th>
+			</tr>
+		</table>
+		{%endif%}
+<h1><center>View products here!!!</h1></center>
+<p><center> Prdouct details</center></p>
+<center><table class="table table-striped table-hover" style="width:1400px">
+	<tr align="center">
+		<!-- <th>#</th> -->
+		<th>Category Name</th>
+		<th>Product Name</th>
+		<th>Details</th>
+		<th>Prices</th>
+		<th>Image</th>
+		<th colspan="2">Manage products</th>
+		
+	
+	</tr>
+	{% for i in data['res'] %}
+	<tr align="center" valign="middle">
+		<!-- <td>{{ loop.index }}</td> -->
+		<td>{{i['category_name']}}</td>
+		<td>{{i['product_name']}}</td>
+		<td>{{i['details']}}</td>
+		<td>{{i['price']}}</td>
+		<td><img src="/{{i['image']}}" alt="Not found" width="100px" height="100px"></td>
+		<td><a href="?action=update&prd={{i['product_id']}}" style="color:green"><b><span class="bi bi-pencil-square"> Edit</span></b></a></td>
+		<td><a href="?action=delete&prd={{i['product_id']}}" style="color:red"><b><span class="bi bi-trash3">Remove</span></b></a></td>
+
+	</tr>
+	{% endfor %}
+</table></center>
+		</center>
+	</form>
+{% include "public_footer.html" %}

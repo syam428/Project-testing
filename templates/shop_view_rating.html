@@ -1,0 +1,22 @@
+{%include "shop_header.html"%}
+<h1><center>All Ratings here!!</h1></center>
+<p><center> Product ratings</center></p>
+<center><table class="table table-striped table-bordered" >
+	<tr align="center">
+		<th>#</th>
+		<th>Product Name</th>
+		<th>Rating</th>
+		<th>Review</th>				
+	</tr>
+	{% for i in data['rate'] %}
+	<tr align="center">
+		<td >{{ loop.index }}</td>
+		<td>{{i['product_name']}}</td>
+		<td>{{i['rate']}}</td>
+		<td>{{i['review']}}</td>
+	</tr>	
+	{%endfor%}
+</table></center>
+
+
+{%include"public_footer.html"%}

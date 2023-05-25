@@ -1,0 +1,178 @@
+{%include"public_header.html"%}
+{%if data['view']%}
+<form method="post">
+	<h1><center>Order Preview</h1></center>
+	<center><table border>
+		<tr align="center"><th><img src="\{{data['view'][0]['image']}}" width="500px" height="500px"></th></tr>
+		<tr align="center"><th >{{data['view'][0]['product_name']}}</th></tr>
+		<tr align="center"><th>{{data['view'][0]['details']}}</th></tr>
+		<tr align="center"><th align="right">{{data['view'][0]['price']}}</th></tr>
+		<tr align="right"><th >Quantity</th><th><input type="text" name="Quant" required placeholder="Enter the quantity"class="form-control" ></th></tr>
+		<tr align="right"><td colspan="2"><input type="submit" class="btn btn-outline-primary" name="sub_cart" value="Add to Cart"></td></tr>
+		<tr><td><input type="hidden" name="hid" value="{{data['view'][0]['price']}}"></td>
+		<tr><td><input type="hidden" name="shhid" value="{{data['view'][0]['shop_id']}}"></td></tr>
+		</tr>
+	</table></center>
+</form>
+{%else%}
+<h1><br><center>View products here!!!</h1></center>
+<p><center> Prdoucts List </center></p>
+<!-- <form method="post">
+	<center><table cellpadding="22px">
+	<tr>
+		<th>Rating &nbsp</th>
+		<th><select class="dropdown-item" name="rating">
+		<option value="Average">Average</option>
+		<option value="Good">Good</option>
+		<option value="Excellent">Excellent</option>
+		</select></th>
+		<th><input type="submit" name="srate" class="btn btn-outline-primary" value="View products"></th></tr>
+	</table><center>
+</form> -->
+<form method="post">
+<center><table cellpadding="10px" >
+	<tr>
+		<th>Category &nbsp</th>
+		<th><select class="dropdown-item" name="category">
+		{% for i in data['cat'] %}
+		<option value="{{i['category_id']}}">{{i['category_name']}}</option>
+		{% endfor %}
+		</select></th>
+		<th><input class="btn btn-outline-primary" type="submit" name="scat" value="View products"></th></tr>
+	</table><center>
+</form>
+<form method=post>
+<center><table  cellpadding="4px">
+<tr>
+	<th><input type="search" name="item" placeholder="Search" class="form-control"></th>
+	<th><input type="submit" name="search" value="Search" class="btn btn-outline-primary" ></th>
+	<th><input type="submit" name="All items" class="btn btn-outline-primary" value="All item"></th>
+</tr>
+</table></center> 
+</form>
+<center>
+
+ <!-- <div class="container-fluid pt-5 pb-3">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-3"><span class="bg-secondary pr-3"></span></h2> -->
+
+<!--------------------------New content from templates--------------------------------------------------->
+<section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">New Arrivals</h2>
+          <!-- <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+
+              <!-- <li data-filter="*" class="filter-active">All</li> -->
+             <!--  <li data-filter=".filter-app"><a>Cosmetics</li>
+              <li data-filter=".filter-card">Laptops</li> -->
+
+		{% for i in data['cat'] %}
+
+             <a style="padding-left:20px;" href="?action=sort&category={{i['category_id']}}"> {{i['category_name']}}</a>
+		{% endfor %}
+</form>
+<style>
+    a:hover {
+      color: orange;
+    }
+  </style>
+            </ul>
+          </div>
+        </div>
+{% for i in data['prd'] %}
+        <div class="row portfolio-container" data-aos="fade-up">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="/{{i['image']}}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="/static/assets/img/portfolio/mob2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="BrandNew"><i class="bi bi-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4>{{i['product_name']}}</h4>
+
+                <p>{{i['price']}}</p>
+                <a class="btn btn-success" href="?action=cart&prd={{i['product_id']}}&amount={{i['price']}}"><font color="white"><b>View Product</a>
+              </div>
+            </div>
+          </div>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+<!--------------------------New content from templates--------------------------------------------------->
+<!--------------------------old content--------------------------------------------------->
+        <!-- <div class="row px-xl-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="image" alt="dfdsfdf">
+                        <div class="product-action">
+                            <a class="btn btn-outline-success btn-square" href="">item1<i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-success btn-square" href="">item2<i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-success btn-square" href="">item3<i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-success btn-square" href="">item4<i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">name</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>price</h5><h6 class="text-muted ml-2"><del></del></h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small>(99)</small>
+                        </div>
+                    </div>
+
+			</div>
+</div>
+</div> -->
+<!--------------------------old content--------------------------------------------------->
+
+
+
+	<!-- <table style="width: 1200px" class="table table-hover table-bordered">
+	<thead class="table table-dark">
+	<tr align="center">
+		<th>#</th>
+		<th>Product Name</th>
+		<th>Specification</th>
+		<th>Price</th>
+		<th>Image</th>
+		<th>Buy</th>
+	</thead>
+	</tr>
+	{% for i in data['prd'] %}
+	<tr align="center">
+		<td>{{ loop.index }}</td>
+		<td>{{i['product_name']}}</td>
+		<td>{{i['details']}}</td>
+		<td>{{i['price']}}</td>
+		<td><img src="/{{i['image']}}" alt="Not found" width="100px" height="100px"></td>
+		<td align="center" style="vertical-align:middle;"center"><a href="?action=cart&prd={{i['product_id']}}&amount={{i['price']}}"><font color="Green"><b>View Product</a></b></font></td>
+	</tr>
+{% endfor %}
+{% endif %}
+</table> --></center>
+{%include"public_footer.html"%}

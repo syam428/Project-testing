@@ -1,0 +1,300 @@
+{%include "public_header.html"%}
+
+
+  <section id="hero">
+
+    <div class="container">
+      <div class="row d-flex align-items-center">
+      <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
+<form method="post">
+		<center>
+		<h1>Sign in here!</h1>
+		<hr>
+		<table style="width: 500px">
+			<tr>
+				<!-- <td><input type="text" name="uname" placeholder="Username"  class="form form-control" ></td> -->
+      <div class="group">
+      <input type="text" name="uname" required="required"/><span class="highlight"></span><span class="bar" autocomplete="off"></span>
+      <label>Username</label>
+      </div>
+			</tr>	
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>		
+			<tr>
+				<!-- <td><input type="Password" name="passw" id="show" placeholder="Password" class="form form-control"></td> -->
+      <div class="group">
+      <input type="password" name="passw" required="required"/><span class="highlight" autocomplete="off"></span><span class="bar"></span>
+      <label>Password</label>
+    </div>
+			</tr>
+			<tr> <th>
+				<br>
+			</th></tr>
+			<tr>
+				<td  colspan="2"><input type="submit" name="submit" value="Let me in!" class="atn atn-submit" ></td>
+			</tr>
+      <tr>
+        <td>
+          
+        </td>
+      </tr>
+		</table>
+		</center>
+		
+	</form>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+        <img src="/static/assets/img/login_page_5.png" class="img-fluid" alt="">
+      </div>
+    </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+   <main id="main">
+  	<section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="flip-right">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="100">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="300">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="400">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="500">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> 
+
+
+<!-- <div class="wrapper">
+  <form>
+    <h1>Material Inputs</h1>
+    <h5>Inspired by Google's Material Design guidelines for text fields</h5>
+    <div class="btn-box"><a class="btn btn-link" href="https://material.google.com/components/text-fields.html" target="_blank">Design Docs</a></div>
+    <hr class="sep"/>
+    <div class="group">
+      <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+      <label>Name</label>
+    </div>
+    <div class="group">
+      <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+      <label>Email</label>
+    </div>
+    <div class="group">
+      <input type="password" required="required"/><span class="highlight"></span><span class="bar"></span>
+      <label>Password</label>
+    </div>
+    <div class="group">
+      <input type="number" required="required"/><span class="highlight"></span><span class="bar"></span>
+      <label>Number</label>
+    </div>
+    <div class="group">
+      <textarea type="textarea" rows="5" required="required"></textarea><span class="highlight"></span><span class="bar"></span>
+      <label>Message</label>
+    </div>
+    <div class="btn-box">
+      <button class="btn btn-submit" type="submit">submit</button>
+      <button class="btn btn-cancel" type="button">cancel</button>
+      <h5>*these buttons do nothing<span class="emoji">&#x1F609;</span></h5>
+    </div>
+  </form>
+</div> -->
+
+
+
+
+    
+<style type="text/css">
+  
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #424242;
+}
+
+form {
+  width: 320px;
+  margin: 45px auto;
+}
+form h1 {
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+  color: #2196f3;
+}
+form h5 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #c6c6c6;
+}
+form hr.sep {
+  background: #2196f3;
+  box-shadow: none;
+  border: none;
+  height: 2px;
+  width: 25%;
+  margin: 0px auto 45px auto;
+}
+form .emoji {
+  font-size: 1.2em;
+}
+
+.group {
+  position: relative;
+  margin: 45px 0;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 320px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #c6c6c6;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+input:focus ~ label, input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -14px;
+  font-size: 12px;
+  color: #2196f3;
+}
+input:focus ~ .bar:before,
+textarea:focus ~ .bar:before {
+  width: 320px;
+}
+input::placeholder
+{
+  color: #c6c6c6;
+}
+/*input[type=password] {
+  letter-spacing: 0.3em;
+}*/
+
+label {
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 320px;
+}
+.bar:before {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #2196f3;
+  transition: 300ms ease all;
+  left: 0%;
+}
+
+.atn {
+  background: #fff;
+  color: #959595;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.atn:hover {
+  color: #8b8b8b;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+}
+.atn.atn-link {
+  background: #2196f3;
+  color: #d3eafd;
+}
+.atn.atn-link:hover {
+  background: #0d8aee;
+  color: #deeffd;
+}
+.atn.atn-submit {
+  background: #2196f3;
+  color: #bce0fb;
+}
+.atn.atn-submit:hover {
+  background: #0d8aee;
+  color: #deeffd;
+}
+.atn.atn-cancel {
+  background: #eee;
+}
+.atn.atn-cancel:hover {
+  background: #e1e1e1;
+  color: #8b8b8b;
+}
+
+.atn-box {
+  text-align: center;
+  margin: 50px 0;
+}
+</style>
+
+	
+{%include "public_footer.html"%}

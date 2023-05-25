@@ -1,0 +1,81 @@
+{%include "special_header.html"%}
+{% if data['upd'] %}
+<main id="main">
+<!-- ======= About Section =======-->
+    <section id="about" class="about" style="background-image:purple">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-in">
+          <h2>Update Category</h2>
+          <p>Prdouct details</p>
+        </div>
+        
+
+<!-- <h1><br><center>Update your products here!!!</h1></center>
+<p><center> Prdouct details</center></p> -->
+<form method='post'>
+	<center><table class="table table-dark table-striped" >
+		<tr align="center">
+			<th>Category Name:</th>
+			<th><input type="text" name="adcat" value="{{data['upd'][0]['category_name']}}"></th>
+		</tr>
+		<tr align="center">
+			<th colspan="2"><input class="btn btn-danger"type="submit" name="edit" value="Edit Category"></th>
+		</tr>
+	</table>
+	</center>
+</form>
+{% else %}
+<!-- ======= Hero Section ======= -->
+  <!-- <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1 style="color:black">Manage Caterories</h1>
+      <p style="color:black">Scroll down to <span class="typed" data-typed-items="Add, Remove, Update"></span></p>
+    </div>
+  </section> --> <!--End Hero -->
+<main id="main">
+
+    <!-- ======= About Section =======-->
+    <section id="about" class="about" style="background-image:purple">
+      <div class="container" >
+
+        <div class="section-title" data-aos="fade-in">
+          <h2>Manage Category</h2>
+          <p>Prdouct details</p>
+       	</div>
+<!-- <h1><center><br>Manage your products here!!!</h1></center> -->
+<form method='post'>
+<center><table border class="table table-hover">
+		<tr align="center">
+			<th>Category Name:</th>
+			<th><input type="text" name="adcat" required></th>
+		</tr>
+		<tr align="center">
+			<th colspan="2" align="right"><input class="btn btn-success" type="submit" name="submit" value="Add Category"></th>
+		</tr>
+	</table></center>
+	
+</form>
+{% endif %}
+<center><h1><br>View categories</h1></center>
+<center><table class="table table-hover table-bordered">
+	<tr align="center">
+		<th>#</th>
+		<th>Category Name</th>
+		<th colspan="2">Edit Category</th>
+	</tr>
+	{%for i in data['val']%}
+	<tr align="center">
+		<td>{{loop.index}}</td>
+		<td>{{i['category_name']}}</td>
+		<td><a href="?action=update&lid={{i['category_id']}}"><font color="green" class="bi bi-pencil-square btn btn-outline-success"> Edit</font></a></td>
+		<td><a href="?action=delete&lid={{i['category_id']}}"><font color="Red" class="bi bi-trash3 btn btn-outline-danger"> Delete</a></font></td>
+	</tr>
+	{%endfor%}
+
+</table></center>
+
+
+
+
+{%include "special_footer.html"%}

@@ -1,0 +1,134 @@
+{%include "public_header.html"%}
+ <section id="hero">
+
+    <div class="container">
+      <div class="row d-flex align-items-right">
+      <div class=" col-lg-5 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
+<form method="post" enctype="multipart/form-data">
+		<center>
+		<h1>Join with BrightMart</h1>
+		<hr>
+		<table style="width: 400px" cellpadding="3px">
+		<tr>
+			<td><input placeholder="Enter your shop Name" type="text" name="shop_name" class="form form-control" required pattern="[A-Za-z ]+$"></td>
+		</tr>
+		<tr style="color:white">
+			<td><b>Upload License</b></td>
+		</tr>
+		<tr>
+			<td><input type="file" name="id"  class="form form-control"></td>
+		</tr>
+		<tr>
+			<th><font color="white">Place Details</font></th>
+		</tr>
+		<tr>
+			<!-- <th>Select District :</th> -->
+			<td align="center" class="form form-control"  >
+			<select class="dropdown-item" name="dist">
+				<option>Alappuzha</option>
+			     <option>Ernakulam</option>
+			     <option>Idukki</option>
+			     <option>Kannur</option>
+			     <option>Kasaragod</option>
+			     <option>Kollam</option>
+			     <option>Kottayam</option>
+			     <option>Kozhikode</option>
+			     <option>Malappuram</option>
+			     <option>Palakkad</option>
+			     <option>Pathanamthitta</option>
+			     <option>Thiruvananthapuram</option> 
+			     <option>Thrissur</option>
+			     <option>Wayanad</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<!-- <th>Place :</th> -->
+			<td ><input type="text" name="place" placeholder="Enter your place"required class="form form-control"></td>
+		</tr>	
+		<tr >
+			<!-- <th>Landmark :</th> -->
+			<td><input type="text" name="landm" required placeholder="Landmark"required class="form form-control"></td>
+		</tr>
+		<tr>
+			<!-- <th>Phone:</th> -->
+			<td><input type="text" name="phone" pattern="[0-9 ]{10}" required maxlength="10" minlength="10" placeholder="Enter valid phone number"required class="form form-control"></td>
+		</tr>
+		
+		<tr>
+			<!-- <th>Email:</th> -->
+			<td><input type="Email" name="mail" placeholder="Enter your valid Email Id" required placeholder="Place"required class="form form-control"></td>
+		</tr>
+		<tr>
+			
+			<th><input type="Password" name="passw" placeholder="Create a password" required class="form form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password Hint!Atleast one Uppercase,Lowercase,digit and minimum of 8 charecters!"></th>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="submit" value="Register" class="btn btn-primary"></td>
+		</tr>
+
+	</table>
+	<p><font color="red"><i>Use your Email id as username*</i></font></i></p>
+</form>
+</center>
+
+
+<!-- <div  class="alert alert-info">
+  <strong>Password Hint!</strong>Atleast one Uppercase,Lowercase,digit and minimum of 8 charecters!
+</div> -->
+</div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+        <img src="/static/assets/img/login_page_5.png" class="img-fluid" alt="">
+      </div>
+    </div>
+    </div>
+
+  </section><!-- End Hero -->
+  <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="flip-right">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="100">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="300">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="400">
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="/static/assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="500">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  <main id="main">
+{%include "public_footer.html"%}
